@@ -57,7 +57,7 @@ const AvailableFoods = () => {
 
     return (
         <div className="my-16 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
+            <h1 className="dark:text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
                 Available Foods
             </h1>
 
@@ -76,7 +76,7 @@ const AvailableFoods = () => {
                         className={`mr-2 px-4 py-2 rounded-3xl ${
                             sortOrder === "asc"
                                 ? "bg-orange-400 text-white"
-                                : "bg-white border-orange-400 text-orange-400 border"
+                                : "bg-white dark:bg-gray-800 border-orange-400 text-orange-400 border"
                         }`}
                     >
                         Sort Ascending
@@ -86,7 +86,7 @@ const AvailableFoods = () => {
                         className={`px-4 py-2 rounded-3xl ${
                             sortOrder === "desc"
                                 ? "bg-orange-400 text-white"
-                                : "bg-white border-orange-400 text-orange-400 border"
+                                : "bg-white dark:bg-gray-800 border-orange-400 text-orange-400 border"
                         }`}
                     >
                         Sort Descending

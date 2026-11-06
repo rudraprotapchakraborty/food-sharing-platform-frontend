@@ -76,7 +76,7 @@ const FoodDetails = () => {
 
     return (
         <div className="max-w-screen-md mx-auto my-16 px-4">
-            <div className="card bg-base-100 shadow-xl w-full">
+            <div className="card bg-base-100 dark:bg-gray-800 dark:text-white shadow-xl w-full">
                 <figure>
                     <img src={food.food_image} className="w-full h-64 object-cover" alt="Food" />
                 </figure>
@@ -118,7 +118,7 @@ const FoodDetails = () => {
                     </div>
                     <button
                         onClick={() => setShowModal(true)}
-                        className="mt-4 btn bg-orange-400 text-white w-full sm:w-auto rounded-lg py-2 px-6"
+                        className="mt-4 btn border-none bg-orange-400 text-white w-full sm:w-auto rounded-lg py-2 px-6"
                     >
                         Request
                     </button>

@@ -100,7 +100,7 @@ const ManageMyFoods = () => {
 
     return (
         <div className="my-16 max-w-5xl mx-auto px-4">
-            <h1 className="text-4xl font-bold mb-8 text-center">Manage My Foods</h1>
+            <h1 className="text-4xl font-bold mb-8 text-center dark:text-white">Manage My Foods</h1>
 
             {addedFood.length === 0 ? (
                 <p className="text-center text-gray-600">No food requests found.</p>
@@ -119,7 +119,7 @@ const ManageMyFoods = () => {
                         </thead>
                         <tbody>
                             {addedFood.map((add) => (
-                                <tr key={add._id}>
+                                <tr key={add._id} className="dark:text-white">
                                     <td className="border border-gray-300 px-4 py-2 text-sm md:text-base">{add.food_name}</td>
                                     <td className="border border-gray-300 px-4 py-2 text-sm md:text-base">{add.food_quantity}</td>
                                     <td className="border border-gray-300 px-4 py-2 text-sm md:text-base">{add.pickup_location}</td>

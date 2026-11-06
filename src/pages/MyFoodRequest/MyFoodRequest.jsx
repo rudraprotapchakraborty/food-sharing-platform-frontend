@@ -12,7 +12,7 @@ const MyFoodRequest = () => {
 
   return (
     <div className="my-16 max-w-7xl mx-auto px-4">
-      <h1 className="text-3xl md:text-5xl font-bold mb-8 text-center">My Food Requests</h1>
+      <h1 className="text-3xl md:text-5xl font-bold mb-8 text-center dark:text-white">My Food Requests</h1>
 
       {foodRequests.length === 0 ? (
         <p className="text-center text-gray-600">No food requests found.</p>
@@ -35,7 +35,7 @@ const MyFoodRequest = () => {
             </thead>
             <tbody>
               {foodRequests.map((request) => (
-                <tr key={request._id} className="hover:bg-gray-50">
+                <tr key={request._id} className="dark:text-white">
                   <td className="border border-gray-300 px-4 py-2 text-sm md:text-base">
                     {request.food_name}
                   </td>

@@ -3,7 +3,7 @@ import FeaturedFoods from "./FeaturedFoods";
 
 const Home = () => {
     return (
-        <div>
+        <div className="overflow-hidden">
             <Banner></Banner>
             <FeaturedFoods></FeaturedFoods>
         </div>

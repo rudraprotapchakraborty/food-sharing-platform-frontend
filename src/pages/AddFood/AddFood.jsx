@@ -67,8 +67,6 @@ const AddFood = () => {
 
             const result2 = await response2.json();
             if (result2.success) {
-                // toast.success("Food added successfully!");
-                // Reset form after successful submission
                 setFoodName('');
                 setFoodImageUrl('');
                 setFoodQuantity('');
@@ -76,8 +74,6 @@ const AddFood = () => {
                 setExpiredDate('');
                 setAdditionalNotes('');
                 setFoodStatus('available');
-            } else {
-                // toast.error(result.message || "Failed to add food!");
             }
 
         } catch (error) {
@@ -87,8 +83,8 @@ const AddFood = () => {
     };
 
     return (
-        <div className="max-w-screen-md mx-auto my-16 px-4">
-            <div className="card bg-base-100 shadow-xl">
+        <div className="max-w-screen-md mx-auto my-16 px-4 dark:text-white">
+            <div className="dark:bg-gray-800 card bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title">Add Food</h2>
 
@@ -99,7 +95,7 @@ const AddFood = () => {
                                 <label className="block">Food Name</label>
                                 <input
                                     type="text"
-                                    className="input input-bordered w-full"
+                                    className="input input-bordered w-full dark:bg-gray-700 dark:text-white"
                                     value={foodName}
                                     onChange={(e) => setFoodName(e.target.value)}
                                     required
@@ -111,7 +107,7 @@ const AddFood = () => {
                                 <label className="block">Food Image URL</label>
                                 <input
                                     type="url"
-                                    className="input input-bordered w-full"
+                                    className="input input-bordered w-full dark:bg-gray-700 dark:text-white"
                                     value={foodImageUrl}
                                     onChange={(e) => setFoodImageUrl(e.target.value)}
                                     placeholder="Enter image URL"
@@ -124,7 +120,7 @@ const AddFood = () => {
                                 <label className="block">Food Quantity</label>
                                 <input
                                     type="number"
-                                    className="input input-bordered w-full"
+                                    className="input input-bordered w-full dark:bg-gray-700 dark:text-white"
                                     value={foodQuantity}
                                     onChange={(e) => setFoodQuantity(e.target.value)}
                                     required
@@ -136,7 +132,7 @@ const AddFood = () => {
                                 <label className="block">Pickup Location</label>
                                 <input
                                     type="text"
-                                    className="input input-bordered w-full"
+                                    className="input input-bordered w-full dark:bg-gray-700 dark:text-white"
                                     value={pickupLocation}
                                     onChange={(e) => setPickupLocation(e.target.value)}
                                     required
@@ -148,7 +144,7 @@ const AddFood = () => {
                                 <label className="block">Expired Date/Time</label>
                                 <input
                                     type="datetime-local"
-                                    className="input input-bordered w-full"
+                                    className="input input-bordered w-full dark:bg-gray-700 dark:text-white"
                                     value={expiredDate}
                                     onChange={(e) => setExpiredDate(e.target.value)}
                                     required
@@ -159,53 +155,22 @@ const AddFood = () => {
                             <div>
                                 <label className="block">Additional Notes</label>
                                 <textarea
-                                    className="textarea textarea-bordered w-full"
+                                    className="textarea textarea-bordered w-full dark:bg-gray-700 dark:text-white"
                                     value={additionalNotes}
                                     onChange={(e) => setAdditionalNotes(e.target.value)}
                                 />
                             </div>
 
-                            {/* Food Status */}
-                            <div>
-                                <label className="block">Food Status</label>
-                                <select
-                                    className="select select-bordered w-full"
-                                    value={foodStatus}
-                                    onChange={(e) => setFoodStatus(e.target.value)}
-                                >
-                                    <option value="available">Available</option>
-                                    <option value="taken">Taken</option>
-                                    <option value="expired">Expired</option>
-                                </select>
-                            </div>
-
-                            {/* Submit Button */}
                             <div className="mt-4">
                                 <button
                                     type="submit"
-                                    className="btn text-white bg-orange-400 w-full rounded-3xl"
+                                    className="btn text-white border-none bg-orange-400 w-full rounded-3xl dark:bg-orange-600"
                                 >
                                     Add Food
                                 </button>
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-
-            {/* Donator Info */}
-            <div className="mt-4">
-                <h4 className="font-semibold">Donator Information</h4>
-                <div className="flex items-center gap-2">
-                    <img
-                        className="w-[50px] h-[50px] rounded-full"
-                        src={user?.photoURL || "default-user-image.png"}
-                        alt="Donator"
-                    />
-                    <div>
-                        <h2>{user?.displayName}</h2>
-                        <h2>{user?.email}</h2>
-                    </div>
                 </div>
             </div>
         </div>

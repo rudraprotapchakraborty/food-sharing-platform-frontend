@@ -23,7 +23,7 @@ const FeaturedFoods = () => {
     return (
         <div className="my-16 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
             {/* Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-center">
+            <h1 className="dark:text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-center">
                 Featured Foods
             </h1>
 

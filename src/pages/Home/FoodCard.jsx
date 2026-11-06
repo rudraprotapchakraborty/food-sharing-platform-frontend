@@ -14,7 +14,7 @@ const FoodCard = ({ food }) => {
     } = food;
 
     return (
-        <div className="card card-compact bg-base-100 w-full max-w-sm md:max-w-md lg:max-w-lg shadow-xl mx-auto">
+        <div className="dark:bg-gray-800 dark:text-white card card-compact bg-base-100 w-full max-w-sm md:max-w-md lg:max-w-lg shadow-xl mx-auto">
             <figure>
                 <img
                     src={food_image}
@@ -41,7 +41,7 @@ const FoodCard = ({ food }) => {
                     <span className="font-semibold">Food Status:</span> {food_status || "Available"}
                 </h2>
                 <div className="card-actions mt-4">
-                    <NavLink to={`/foods/${_id}`} className="btn bg-orange-400 text-white w-full md:w-auto">
+                    <NavLink to={`/foods/${_id}`} className="btn border-none bg-orange-400 text-white w-full md:w-auto">
                         View details
                     </NavLink>
                 </div>
