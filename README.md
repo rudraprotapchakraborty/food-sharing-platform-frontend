@@ -2,6 +2,8 @@
 
 Share surplus food with people nearby, or find something good to eat. Browse listings, send a request and collect the food before its deadline. The app is branded **FoodShare**.
 
+Live: [food-sharing-platform-frontend-chi.vercel.app](https://food-sharing-platform-frontend-chi.vercel.app/) (use a test account on the sign-in page)
+
 Backend repository: [food-sharing-platform-backend](https://github.com/rudraprotapchakraborty/food-sharing-platform-backend)
 
 ## Features
@@ -39,11 +41,11 @@ In development the dev server proxies `/api` to `http://127.0.0.1:5000`.
 | Variable | Purpose |
 | --- | --- |
 | `GOOGLE_CLIENT_ID` | Public Google OAuth client id. The button is hidden when it is empty. |
-| `VITE_API_URL` | Optional override of the API origin including `/api`. |
+| `VITE_API_URL` | Optional override of the API origin including `/api`. Production defaults to `https://food-sharing-platform-backend-blush.vercel.app/api`. |
 
 ## Deploying
 
-The project deploys as a static site (Vercel config included, with a rewrite to `index.html` for client side routing). Set `GOOGLE_CLIENT_ID` in the host's environment, and add the site's origin to the Google client's authorized JavaScript origins. The API origin is set in `src/lib/api.js` (or via `VITE_API_URL`), and the backend's `CLIENT_URL` must list this site's origin.
+The project deploys as a static site (Vercel config included, with a rewrite to `index.html` for client side routing). Set `GOOGLE_CLIENT_ID` in the host's environment, and add the site's origin to the Google client's authorized JavaScript origins. The API origin defaults to the deployed backend in `src/lib/api.js` (override with `VITE_API_URL`), and the backend's `CLIENT_URL` must list this site's origin.
 
 ## Credits
 

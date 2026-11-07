@@ -6,7 +6,7 @@ export const SESSION_EXPIRED_EVENT = "fs:session-expired";
 
 const api = axios.create({
   // Development goes through the Vite proxy; production talks to the deployed API unless VITE_API_URL says otherwise
-  baseURL: import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "/api" : "https://food-sharing-server-theta.vercel.app/api"),
+  baseURL: import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "/api" : "https://food-sharing-platform-backend-blush.vercel.app/api"),
   timeout: 20_000,
 });
 
