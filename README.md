@@ -1,10 +1,25 @@
-# Food Sharing Platform · Web app
+<div align="center">
 
-Share surplus food with people nearby, or find something good to eat. Browse listings, send a request and collect the food before its deadline. The app is branded **FoodShare**.
+# 🥗 Food Sharing Platform
 
-Live: [food-sharing-platform-frontend-chi.vercel.app](https://food-sharing-platform-frontend-chi.vercel.app/) (use a test account on the sign-in page)
+**Share surplus food, request a meal and cut waste, with an accept-and-reserve request flow.**
 
-Backend repository: [food-sharing-platform-backend](https://github.com/rudraprotapchakraborty/food-sharing-platform-backend)
+[**Live demo**](https://food-sharing-platform-frontend-chi.vercel.app/) · [Backend API](https://github.com/rudraprotapchakraborty/food-sharing-platform-backend) · [Portfolio](https://rudraprotapchakraborty.com/projects)
+
+![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61dafb) ![Vite](https://img.shields.io/badge/Vite-646cff?style=for-the-badge&logo=vite&logoColor=ffffff) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-0f172a?style=for-the-badge&logo=tailwindcss&logoColor=38bdf8) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=ffffff)
+
+<a href="https://food-sharing-platform-frontend-chi.vercel.app/"><img src="https://i.ibb.co/4RBTYRCg/food-sharing.webp" alt="Food Sharing Platform: home page" width="880"></a>
+
+</div>
+
+> The web app of **FoodShare**.
+>
+> - Browse, search and filter food by category and how soon it expires
+> - Share food with a photo, servings, pickup place and a collection deadline
+> - Donor accepts or declines requests; accepting reserves the food and reveals contact details
+> - Expired food disappears from the list on its own
+
+A platform that connects people with surplus food to people who can use it. Anyone can browse what is on offer, search, filter by category, sort by how soon it expires and see how much time is left to collect it. Signed-in members share food with a photo, servings, pickup place and a collection deadline, and ask for food with a short message. The donor accepts or declines: accepting reserves the food, declines everyone else waiting and only then reveals the two people's email addresses to each other, and the donor marks it handed over when it has been collected. Food past its deadline disappears from the list. Sign-in works with email and password, confirmed with a one-time email code, or with Google, with password reset, an account settings page and an admin area for managing members. Shared test accounts for each role make it easy to try, and the interface supports light and dark themes.
 
 ## Features
 
@@ -50,3 +65,11 @@ The project deploys as a static site (Vercel config included, with a rewrite to 
 ## Credits
 
 Sample food photos come from Wikipedia and Wikimedia Commons under their free licences.
+
+---
+
+<div align="center">
+
+Made by **[Rudra Protap Chakraborty](https://rudraprotapchakraborty.com)** · [Portfolio](https://rudraprotapchakraborty.com) · [GitHub](https://github.com/rudraprotapchakraborty)
+
+</div>
