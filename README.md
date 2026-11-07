@@ -1,87 +1,50 @@
-# Food Sharing Website - Client Side
+# Food Sharing Platform · Web app
 
-## Overview
-The website is designed to connect individuals and organizations to share surplus food, reduce food waste, and help those in need. This platform enables users to contribute, request, and manage food resources, fostering sustainable living and community support.
+Share surplus food with people nearby, or find something good to eat. Browse listings, send a request and collect the food before its deadline. The app is branded **FoodShare**.
 
-## Screenshot
-![Screenshot](/src/assets/screenshot.png)
+Backend repository: [food-sharing-platform-backend](https://github.com/rudraprotapchakraborty/food-sharing-platform-backend)
 
-## Technologies Used
-- **Frontend:** React, React Router
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
-- **Authentication & Real-Time Data:** Firebase
-- **Other Dependencies:** Cors, Dotenv
+## Features
 
-## Core Features
-- **User Authentication**: Secure login and registration using Firebase Authentication.
-- **Food CRUD Operations**:
-  - **Create**: Users can add food items with details like type, quantity, and expiration date.
-  - **Read**: Browse available food items and filter them by type, quantity, or location.
-  - **Update**: Modify food details such as quantity or availability status.
-  - **Delete**: Remove food listings when no longer available.
-- **Food Requests**: Users can request food from available listings and manage their requests.
-- **Dynamic UI**: Built with React to ensure a responsive and interactive experience.
-- **Database Management**: MongoDB stores user and food data, while Firebase handles authentication and real-time updates.
+- Browse food with search, category filter, sort (ending soonest, newest, most servings) and a status filter. The state lives in the address bar, so every view can be linked or reloaded
+- Each listing shows a photo, servings, pickup place, a live "time left" and the donor. Food past its deadline disappears from the list
+- Request flow: ask for a listing with an optional message. The donor accepts or declines, the food is reserved, other waiting requests are declined automatically, and the donor marks it as handed over. Requesters can cancel, which puts reserved food back on the list
+- Privacy: email addresses are hidden. Only after a request is accepted do the donor and that one requester see each other's email
+- Share food with a live photo preview. Only the donor (or an admin) can edit or remove a listing
+- Email and password sign-in with a six digit email code, Google sign-in, forgot-password reset
+- Account settings: name, photo, email (confirmed by code), password, sign-in methods, delete account
+- Admin area: member list with search, block, role change and delete, plus site statistics
+- Light and dark mode, responsive down to phones
+- Shared test accounts (Admin and User) on the sign-in page, locked so settings and the sample listings cannot be changed
+- Links from the first version of the site (`/available-foods`, `/add-food`, `/manage-my-foods`, `/my-food-request`) still work
 
-## Dependencies
-The following npm packages are used:
-```json
-{
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-router-dom": "^6.10.0",
-    "firebase": "^9.0.0",
-    "express": "^4.18.2",
-    "mongoose": "^7.0.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "nodemon": "^2.0.22"
-  }
-}
+## Stack
+
+React 19, Vite 8, Tailwind CSS 4, React Router 7, Axios, lucide-react.
+
+## Run it locally
+
+You need the [backend](https://github.com/rudraprotapchakraborty/food-sharing-platform-backend) running on port 5000.
+
+```bash
+npm install
+cp .env.example .env.local   # then fill in GOOGLE_CLIENT_ID
+npm run dev                  # http://localhost:3000
 ```
 
-## How to Run the Project Locally
-### Prerequisites
-Ensure you have the following installed:
-- **Node.js** (v16 or later)
-- **MongoDB** (set up locally or use a cloud instance like MongoDB Atlas)
-- **Firebase Project** (for authentication)
+In development the dev server proxies `/api` to `http://127.0.0.1:5000`.
 
-### Steps
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/rudraprotapchakraborty/food-sharing-client.git
-   cd food-sharing-client
-   ```
+## Environment
 
-2. **Set Up Environment Variables**
-   Create a `.env` file in the root directory and add:
-   ```env
-   MONGO_URI=your_mongodb_connection_string
-   FIREBASE_API_KEY=your_firebase_api_key
-   ```
+| Variable | Purpose |
+| --- | --- |
+| `GOOGLE_CLIENT_ID` | Public Google OAuth client id. The button is hidden when it is empty. |
+| `VITE_API_URL` | Optional override of the API origin including `/api`. |
 
-3. **Install Dependencies**
-   ```bash
-   npm install
-   ```
+## Deploying
 
-4. **Run the Backend Server**
-   ```bash
-   npm start
-   ```
+The project deploys as a static site (Vercel config included, with a rewrite to `index.html` for client side routing). Set `GOOGLE_CLIENT_ID` in the host's environment, and add the site's origin to the Google client's authorized JavaScript origins. The API origin is set in `src/lib/api.js` (or via `VITE_API_URL`), and the backend's `CLIENT_URL` must list this site's origin.
 
-5. **Run the Frontend**
-   ```bash
-   cd client
-   npm start
-   ```
+## Credits
 
-6. **Access the Application**
-   Open `http://localhost:3000` in your browser.
-
-## Live Project & Resources
-- **Live Project**: [https://food-sharing-5c75a.web.app/](https://food-sharing-5c75a.web.app/)
-- **Backend Repository**: [https://github.com/rudraprotapchakraborty/food-sharing-server](https://github.com/rudraprotapchakraborty/food-sharing-server)
----
+Sample food photos come from Wikipedia and Wikimedia Commons under their free licences.
